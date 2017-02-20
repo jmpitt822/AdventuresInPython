@@ -1,5 +1,3 @@
-import ProfChoices
-
 savedata = {}
 
 
@@ -86,7 +84,6 @@ def choose_warrior_weap():
         savedata["HP"] = 15
     else:
         print("Choose again.")
-
 
 
 greeting()
