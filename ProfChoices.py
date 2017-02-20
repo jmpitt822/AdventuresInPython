@@ -1,4 +1,3 @@
-
 def choose_prof(savedata):
     print("Hello,", savedata["Name"], ", what is your profession?(Archer | Rogue | Warrior)")
     player_prof = input()
