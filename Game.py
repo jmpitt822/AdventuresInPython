@@ -7,11 +7,13 @@ def greeting():
     choose_prof(savedata)
 
 
-f = open('savefile', 'r+')
+f = open('savefile', 'r')
 read_file = f.read()
+f.close()
 savedata = ast.literal_eval(read_file)
 print(savedata)
 greeting()
 print(savedata)
 sds = str(savedata)
-f.write(sds)
+nf = open('savefile', 'w')
+nf.write(sds)
