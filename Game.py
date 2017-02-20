@@ -1,5 +1,4 @@
-savedata = {}
-
+import ast
 
 def greeting():
     player_name = input("Greetings, traveller. What is your name?\n")
@@ -65,7 +64,7 @@ def choose_rogue_weap():
         print("Choose again.")
 
 def choose_warrior_weap():
-    print("Hail, warrior! How do you smite your foes? (Sword & Sheild | Longsword | Axe)")
+    print("Hail, warrior! How do you smite your foes? (Sword & Shield | Longsword | Axe)")
     player_weap = input()
     if player_weap == "Sword & Shield":
         print("You have to be able to give as good as you get.")
@@ -86,5 +85,9 @@ def choose_warrior_weap():
         print("Choose again.")
 
 
+savedata = {}
 greeting()
 print(savedata)
+f = open('savefile', 'w')
+sds = str(savedata)
+f.write(sds)
