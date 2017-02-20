@@ -1,3 +1,5 @@
+import ProfChoices
+
 savedata = {}
 
 
@@ -5,7 +7,6 @@ def greeting():
     player_name = input("Greetings, traveller. What is your name?\n")
     savedata["Name"] = player_name
     choose_prof()
-
 
 def choose_prof():
     print("Hello,", savedata["Name"], ", what is your profession?(Archer | Rogue | Warrior)")
@@ -89,3 +90,4 @@ def choose_warrior_weap():
 
 
 greeting()
+print(savedata)
