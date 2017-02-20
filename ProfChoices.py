@@ -19,17 +19,17 @@ def choose_archer_weap(savedata):
     if player_weap == "Crossbow":
         print("Slow, but sturdy enough.")
         savedata["Weapon"] = player_weap
-        savedata["Dmg"] = 8
+        savedata["Dmg"] = 10
         savedata["HP"] = 25
     elif player_weap == "Longbow":
         print("Can't beat the classics.")
         savedata["Weapon"] = player_weap
-        savedata["Dmg"] = 5
+        savedata["Dmg"] = 6
         savedata["HP"] = 20
     elif player_weap == "Recurve":
         print("You prefer the fancy stuff, eh?")
         savedata["Weapon"] = player_weap
-        savedata["Dmg"] = 10
+        savedata["Dmg"] = 8
         savedata["HP"] = 15
     else:
         print("Choose again")
