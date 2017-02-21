@@ -13,6 +13,7 @@ def choose_prof(savedata):
     else:
         print("Choose again, traveller.")
 
+
 def choose_archer_weap(savedata):
     print("Ah, an archer, eh? What bow do you favor? (Crossbow | Longbow | Recurve)")
     player_weap = input()
@@ -34,6 +35,7 @@ def choose_archer_weap(savedata):
     else:
         print("Choose again")
 
+
 def choose_rogue_weap(savedata):
     print("Sneak and stab, right? Or do you prefer to shoot? (Daggers | Shortbow | Pistol)")
     player_weap = input()
@@ -54,6 +56,7 @@ def choose_rogue_weap(savedata):
         savedata["HP"] = 15
     else:
         print("Choose again.")
+
 
 def choose_warrior_weap(savedata):
     print("Hail, warrior! How do you smite your foes? (Sword & Shield | Longsword | Axe)")
