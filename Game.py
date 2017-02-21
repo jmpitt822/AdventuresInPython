@@ -17,7 +17,7 @@ if menu_choice == "1":
     nf.write(sds)
     nf.close()
 elif menu_choice == "2":
-    load_choice = input("Which character do you want to load?")
+    load_choice = input("Which character do you want to load?\n")
     f = open('savefile_'+load_choice+'.txt', 'r')
     read_file = f.read()
     f.close()

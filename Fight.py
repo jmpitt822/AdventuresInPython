@@ -6,7 +6,7 @@ def choose_enemy():
     with open('enemies', 'r') as f:
         for line in f:
             array.append(line.strip())
-    x = random.randrange(1, 3)
+    x = random.randrange(0, 3)
     random_enemy = array[x]
     f.close()
     enemy = ast.literal_eval(random_enemy)
