@@ -22,7 +22,7 @@ def choose_archer_weap(savedata):
         savedata["Weapon"] = player_weap
         savedata["Dmg"] = 10
         savedata["HP"] = 30
-        savedata["Speed"] = 8
+        savedata["Speed"] = 10
         savedata["Def"] = 12
         savedata["Range"] = 16
     elif player_weap == "Longbow":
@@ -55,7 +55,7 @@ def choose_rogue_weap(savedata):
         savedata["HP"] = 25
         savedata["Speed"] = 10
         savedata["Def"] = 12
-        savedata["Stealth"] = 12
+        savedata["Stealth"] = 20
     elif player_weap == "Shortbow":
         print("They'll never hear it coming.")
         savedata["Weapon"] = player_weap
@@ -63,7 +63,7 @@ def choose_rogue_weap(savedata):
         savedata["HP"] = 20
         savedata["Speed"] = 16
         savedata["Def"] = 12
-        savedata["Stealth"] = 8
+        savedata["Stealth"] = 16
     elif player_weap == "Pistol":
         print("Not the most stealthy weapon, is it?")
         savedata["Weapon"] = player_weap
@@ -71,7 +71,7 @@ def choose_rogue_weap(savedata):
         savedata["HP"] = 15
         savedata["Speed"] = 12
         savedata["Def"] = 18
-        savedata["Stealth"] = 3
+        savedata["Stealth"] = 7
     else:
         print("Choose again.")
 

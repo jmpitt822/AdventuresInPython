@@ -46,12 +46,30 @@ def choose_fight_style(player_prof, player, enemy):
     return fight_style(player, enemy)
 
 
-def archer_fight():
-    print('pew pew')
+def archer_fight(player, enemy):
+    player_dmg = random.randrange(0, player["Dmg"])
+    enemy["HP"] -= player_dmg
+    print(player["Name"], "hit for", player_dmg)
+    if player["Range"] <= enemy["Speed"]:
+        enemy_dmg = random.randrange(0, enemy["Dmg"])
+        player["HP"] -= enemy_dmg
+        print(enemy["Name"], "hit for", enemy_dmg)
+    print("The enemy is still", player["Range"], "yards away.")
 
 
-def rogue_fight():
-    print('stab stab')
+def rogue_fight(player, enemy):
+    player_dmg = random.randrange(0, player["Dmg"])
+    enemy["HP"] -= player_dmg
+    enemy_sight = random.randrange(0, 20)
+    print(player["Name"], "hit for", player_dmg)
+    if player["Stealth"] > enemy_sight:
+        player["Stealth"] -= 3
+    else:
+        player["Stealth"] = 0
+        enemy_dmg = random.randrange(0, enemy["Dmg"])
+        player["HP"] -= enemy_dmg
+        print(player["Name"], "was spotted!")
+        print(enemy["Name"], "hit for", enemy_dmg)
 
 
 def warrior_fight(player, enemy):
@@ -77,6 +95,8 @@ def defend(player, enemy):
 def fall_back(player, enemy):
     if player["Speed"] > enemy["Speed"]:
         player["Speed"] -= (enemy["Speed"]/2)
+        if player["Prof"] == "Archer":
+            player["Range"] += 5
     else:
         enemy_dmg = int((enemy["Dmg"] * 0.75))
         player["HP"] -= enemy_dmg
