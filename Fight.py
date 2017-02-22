@@ -20,7 +20,7 @@ def begin_fight(player, enemy):
         print("Enemy health:", enemy["HP"])
         player["HP"] -= enemy["Dmg"]
         enemy["HP"] -= player["Dmg"]
-        print("What will you do? (Attack | Defend| Fall Back)")
+        print("What will you do? (Attack | Defend| Fall Back | Flee)")
         combat_choice = input()
         if combat_choice == "Attack":
             choose_fight_style(player["Prof"])
@@ -28,6 +28,8 @@ def begin_fight(player, enemy):
             defend()
         elif combat_choice == "Fall Back":
             fall_back()
+        elif combat_choice == "Flee":
+            flee()
         else:
             print("invalid choice")
     if player["HP"] <= 0:
@@ -64,4 +66,7 @@ def defend():
 
 
 def fall_back():
+    print("Come back to this")
+
+def flee():
     print("Come back to this")
