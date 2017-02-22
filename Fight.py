@@ -23,7 +23,7 @@ def begin_fight(player, enemy):
         if combat_choice == "Attack":
             choose_fight_style(player["Prof"], player, enemy)
         elif combat_choice == "Defend":
-            defend()
+            defend(player, enemy)
         elif combat_choice == "Fall Back":
             fall_back(player, enemy)
         elif combat_choice == "Flee":
@@ -50,7 +50,6 @@ def archer_fight():
     print('pew pew')
 
 
-
 def rogue_fight():
     print('stab stab')
 
@@ -68,16 +67,20 @@ def warrior_fight(player, enemy):
     enemy["HP"] -= (player_dmg + player_rage)
 
 
-def defend():
-    print("Come back to this")
+def defend(player, enemy):
+    player_def = random.randrange(0, player["Def"])
+    if player_def < enemy["Dmg"]:
+        player["HP"] -= (enemy["Dmg"] - player_def)
+    print(player["Name"], "defended for", player_def, "against", enemy["Dmg"], "damage.")
 
 
 def fall_back(player, enemy):
     if player["Speed"] > enemy["Speed"]:
         player["Speed"] -= (enemy["Speed"]/2)
     else:
-        player["HP"] -= (enemy["Dmg"] * 0.75)
-
+        enemy_dmg = int((enemy["Dmg"] * 0.75))
+        player["HP"] -= enemy_dmg
+        print(player["Name"], "was too slow! They took", enemy_dmg, "damage.")
 
 
 def flee(player, enemy):
@@ -85,4 +88,5 @@ def flee(player, enemy):
         print("You got away safely!")
         exit()
     else:
+        print(player["Name"], "couldn't get away! They took", enemy["Dmg"], "damage.")
         player["HP"] -= enemy["Dmg"]
