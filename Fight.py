@@ -25,7 +25,7 @@ def begin_fight(player, enemy):
         elif combat_choice == "Defend":
             defend()
         elif combat_choice == "Fall Back":
-            fall_back()
+            fall_back(player, enemy)
         elif combat_choice == "Flee":
             flee(player, enemy)
         else:
@@ -72,8 +72,12 @@ def defend():
     print("Come back to this")
 
 
-def fall_back():
-    print("Come back to this")
+def fall_back(player, enemy):
+    if player["Speed"] > enemy["Speed"]:
+        player["Speed"] -= (enemy["Speed"]/2)
+    else:
+        player["HP"] -= (enemy["Dmg"] * 0.75)
+
 
 
 def flee(player, enemy):
