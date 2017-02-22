@@ -1,3 +1,8 @@
-{'Prof': 'Ogre Warrior', 'Name': 'Ug Fug', 'Weapon': 'Club', 'Dmg': 12, 'HP': 25}
-{'Prof': 'Elf Rogue', 'Name': 'Fabio', 'Weapon': 'Dagger', 'Dmg': 10, 'HP': 25}
-{'Prof': 'Draconid Archer', 'Name': 'Hissfit', 'Weapon': 'Recurve', 'Dmg': 10, 'HP': 15}
+{'Prof': 'Ogre Warrior', 'Name': 'Ug Fug', 'Weapon': 'Club', 'Dmg': 12, 'HP': 40, 'Speed': 6}
+{'Prof': 'Elf Rogue', 'Name': 'Fabio', 'Weapon': 'Dagger', 'Dmg': 8, 'HP': 25, 'Speed': 12}
+{'Prof': 'Draconid Archer', 'Name': 'Hissfit', 'Weapon': 'Recurve', 'Dmg': 8, 'HP': 15, 'Speed': 12}
+{'Prof': 'Naga Warrior', 'Name': 'Lance', 'Weapon': 'Lance', 'Dmg': 15, 'HP': 35, 'Speed': 15}
+{'Prof': 'Gremlin Rogue', 'Name': 'Shiv', 'Weapon': 'Dagger', 'Dmg': 6, 'HP': 8, 'Speed': 10}
+{'Prof': 'Pixie Archer', 'Name': 'Tinker Hell', 'Weapon': 'RainBow', 'Dmg': 10, 'HP': 7, 'Speed': 20}
+{'Prof': 'Werewolf Warrior', 'Name': 'Ysgramor', 'Weapon': 'Great Axe', 'Dmg': 20, 'HP': 50, 'Speed': 10}
+{'Prof': 'Wendingo Rogue', 'Name': 'Davis', 'Weapon': 'Pocket Knife', 'Dmg': 7, 'HP': 30, 'Speed': 16}
