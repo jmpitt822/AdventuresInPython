@@ -18,12 +18,14 @@ def begin_fight(player, enemy):
     while player["HP"] > 0 and enemy["HP"] > 0:
         print("Your health:", player["HP"])
         print("Enemy health:", enemy["HP"])
-        print("What will you do? (Attack | Defend| Fall Back | Flee)")
+        print("What will you do? (Attack | Defend| Use Item | Fall Back | Flee)")
         combat_choice = input()
         if combat_choice == "Attack":
             choose_fight_style(player["Prof"], player, enemy)
         elif combat_choice == "Defend":
             defend(player, enemy)
+        elif combat_choice == "Use Item":
+            print("come back to this")
         elif combat_choice == "Fall Back":
             fall_back(player, enemy)
         elif combat_choice == "Flee":
