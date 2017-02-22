@@ -6,7 +6,7 @@ def choose_enemy():
     with open('enemies', 'r') as f:
         for line in f:
             array.append(line.strip())
-    x = random.randrange(0, 3)
+    x = random.randrange(0, 8)
     random_enemy = array[x]
     f.close()
     enemy = ast.literal_eval(random_enemy)
@@ -20,7 +20,7 @@ def begin_fight(player, enemy):
         print("Enemy health:", enemy["HP"])
         player["HP"] -= enemy["Dmg"]
         enemy["HP"] -= player["Dmg"]
-        print("What will you do? (Attack | Defend| Fall Back")
+        print("What will you do? (Attack | Defend| Fall Back)")
         combat_choice = input()
         if combat_choice == "Attack":
             choose_fight_style(player["Prof"])
@@ -48,6 +48,7 @@ def choose_fight_style(player_prof):
 
 def archer_fight():
     print('pew pew')
+
 
 
 def rogue_fight():

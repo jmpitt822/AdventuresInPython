@@ -21,17 +21,26 @@ def choose_archer_weap(savedata):
         print("Slow, but sturdy enough.")
         savedata["Weapon"] = player_weap
         savedata["Dmg"] = 10
-        savedata["HP"] = 25
+        savedata["HP"] = 30
+        savedata["Speed"] = 8
+        savedata["Def"] = 12
+        savedata["Range"] = 16
     elif player_weap == "Longbow":
         print("Can't beat the classics.")
         savedata["Weapon"] = player_weap
         savedata["Dmg"] = 6
         savedata["HP"] = 20
+        savedata["Speed"] = 12
+        savedata["Def"] = 8
+        savedata["Range"] = 20
     elif player_weap == "Recurve":
         print("You prefer the fancy stuff, eh?")
         savedata["Weapon"] = player_weap
         savedata["Dmg"] = 8
         savedata["HP"] = 15
+        savedata["Speed"] = 16
+        savedata["Def"] = 6
+        savedata["Range"] = 10
     else:
         print("Choose again")
 
@@ -44,16 +53,25 @@ def choose_rogue_weap(savedata):
         savedata["Weapon"] = player_weap
         savedata["Dmg"] = 10
         savedata["HP"] = 25
+        savedata["Speed"] = 10
+        savedata["Def"] = 12
+        savedata["Stealth"] = 12
     elif player_weap == "Shortbow":
         print("They'll never hear it coming.")
         savedata["Weapon"] = player_weap
         savedata["Dmg"] = 5
         savedata["HP"] = 20
+        savedata["Speed"] = 16
+        savedata["Def"] = 12
+        savedata["Stealth"] = 8
     elif player_weap == "Pistol":
         print("Not the most stealthy weapon, is it?")
         savedata["Weapon"] = player_weap
-        savedata["Dmg"] = 10
+        savedata["Dmg"] = 14
         savedata["HP"] = 15
+        savedata["Speed"] = 12
+        savedata["Def"] = 18
+        savedata["Stealth"] = 3
     else:
         print("Choose again.")
 
@@ -64,17 +82,26 @@ def choose_warrior_weap(savedata):
     if player_weap == "Sword & Shield":
         print("You have to be able to give as good as you get.")
         savedata["Weapon"] = player_weap
-        savedata["Dmg"] = 10
-        savedata["HP"] = 40
+        savedata["Dmg"] = 8
+        savedata["HP"] = 50
+        savedata["Speed"] = 8
+        savedata["Def"] = 20
+        savedata["Rage"] = 8
     elif player_weap == "Longsword":
         print("The best defense is a good offense.")
         savedata["Weapon"] = player_weap
-        savedata["Dmg"] = 20
-        savedata["HP"] = 25
+        savedata["Dmg"] = 14
+        savedata["HP"] = 40
+        savedata["Speed"] = 12
+        savedata["Def"] = 15
+        savedata["Rage"] = 12
     elif player_weap == "Axe":
         print("Brutal, but effective.")
         savedata["Weapon"] = player_weap
-        savedata["Dmg"] = 25
-        savedata["HP"] = 15
+        savedata["Dmg"] = 20
+        savedata["HP"] = 30
+        savedata["Speed"] = 16
+        savedata["Def"] = 12
+        savedata["Rage"] = 15
     else:
         print("Choose again.")
