@@ -1,4 +1,4 @@
-import random, ast
+import random, ast, Loot
 
 
 def choose_enemy():
@@ -34,6 +34,7 @@ def begin_fight(player, enemy):
         print("You lose!")
     elif enemy["HP"] <= 0:
         print("You win!")
+        Loot.generate_loot(player)
 
 
 def choose_fight_style(player_prof, player, enemy):
