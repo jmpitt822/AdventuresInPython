@@ -18,18 +18,16 @@ def begin_fight(player, enemy):
     while player["HP"] > 0 and enemy["HP"] > 0:
         print("Your health:", player["HP"])
         print("Enemy health:", enemy["HP"])
-        player["HP"] -= enemy["Dmg"]
-        enemy["HP"] -= player["Dmg"]
         print("What will you do? (Attack | Defend| Fall Back | Flee)")
         combat_choice = input()
         if combat_choice == "Attack":
-            choose_fight_style(player["Prof"])
+            choose_fight_style(player["Prof"], player, enemy)
         elif combat_choice == "Defend":
             defend()
         elif combat_choice == "Fall Back":
             fall_back()
         elif combat_choice == "Flee":
-            flee()
+            flee(player, enemy)
         else:
             print("invalid choice")
     if player["HP"] <= 0:
@@ -38,14 +36,14 @@ def begin_fight(player, enemy):
         print("You win!")
 
 
-def choose_fight_style(player_prof):
+def choose_fight_style(player_prof, player, enemy):
     switcher = {
         "Archer": archer_fight,
         "Rogue": rogue_fight,
         "Warrior": warrior_fight,
     }
     fight_style = switcher.get(player_prof)
-    return fight_style()
+    return fight_style(player, enemy)
 
 
 def archer_fight():
@@ -57,8 +55,17 @@ def rogue_fight():
     print('stab stab')
 
 
-def warrior_fight():
-    print('slash slash')
+def warrior_fight(player, enemy):
+    player_rage = 0
+    if player["HP"] < 20:
+        player_rage = random.randrange(1, player["Rage"])
+        print(player["Name"],"is raging!", player_rage)
+    player_dmg = random.randrange(0, player["Dmg"])
+    enemy_dmg = random.randrange(0, enemy["Dmg"])
+    print(player["Name"], "hit for", player_dmg + player_rage)
+    print(enemy["Name"], "hit for", enemy_dmg)
+    player["HP"] -= enemy_dmg
+    enemy["HP"] -= (player_dmg + player_rage)
 
 
 def defend():
@@ -68,5 +75,10 @@ def defend():
 def fall_back():
     print("Come back to this")
 
-def flee():
-    print("Come back to this")
+
+def flee(player, enemy):
+    if player["Speed"] > enemy["Speed"]:
+        print("You got away safely!")
+        exit()
+    else:
+        player["HP"] -= enemy["Dmg"]
